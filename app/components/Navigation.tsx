@@ -29,15 +29,15 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          ? "glass border-b border-white/10 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <Link
             href="/"
-            className="text-xl font-bold text-slate-900 hover:text-teal-600 transition-colors duration-200"
+            className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300"
           >
             TB
           </Link>
@@ -48,9 +48,10 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-slate-700 hover:text-teal-600 font-medium transition-colors duration-200 text-sm"
+                className="text-slate-300 hover:text-cyan-400 font-medium transition-colors duration-200 text-sm relative group"
               >
                 {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </div>
@@ -58,7 +59,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-slate-900"
+            className="md:hidden p-2 glass rounded-lg text-white hover:bg-white/10 transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -88,14 +89,14 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 bg-white/95 backdrop-blur-md">
-            <div className="flex flex-col space-y-2">
+          <div className="md:hidden pb-6 glass border-t border-white/10 mt-4">
+            <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-2 text-slate-700 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-colors duration-200"
+                  className="px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-all duration-200 font-medium"
                 >
                   {link.label}
                 </Link>
@@ -107,4 +108,3 @@ export default function Navigation() {
     </nav>
   );
 }
-
