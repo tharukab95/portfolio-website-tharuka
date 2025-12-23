@@ -103,7 +103,7 @@ export default function Hero() {
             <div className={`flex flex-col sm:flex-row gap-4 pt-6 transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <Link
                 href="#projects"
-                className="group relative px-10 py-4 bg-gradient-to-r from-[#00d9ff] via-[#a855f7] to-[#10b981] text-white rounded-xl font-medium overflow-hidden transition-all duration-500 hover:scale-[1.05] shadow-lg hover:shadow-xl hover:shadow-[#00d9ff]/30 animate-gradient"
+                className="group relative px-10 py-4 bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#8b5cf6] text-white rounded-xl font-medium overflow-hidden transition-all duration-500 hover:scale-[1.05] shadow-lg hover:shadow-xl hover:shadow-[#6366f1]/40 animate-gradient"
               >
                 <span className="relative z-10 flex items-center gap-3 tracking-wide font-heading">
                   View Projects
@@ -111,7 +111,7 @@ export default function Hero() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#10b981] via-[#a855f7] to-[#00d9ff] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#8b5cf6] via-[#6366f1] to-[#3b82f6] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Link>
 
               <Link
