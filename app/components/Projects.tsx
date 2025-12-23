@@ -34,7 +34,7 @@ export default function Projects() {
       role: "Final Year Project",
       technologies: ["C++", "Java"],
       impact: "Published research papers and won Best Paper award at MERCon 2020",
-      gradient: "from-cyan-500 to-blue-600",
+      gradient: "from-[#00d9ff] to-[#33e0ff]",
     },
     {
       title: "Payment Platform (Multi-Gateway)",
@@ -42,7 +42,7 @@ export default function Projects() {
       role: "Lead Developer",
       technologies: ["ReactJS", "Next.js", "Node.js", "Express", "Stripe", "Global Payments", "ComBank", "GCP", "MongoDB"],
       impact: "Enabled seamless payment processing across multiple products and services",
-      gradient: "from-purple-500 to-pink-600",
+      gradient: "from-[#a855f7] to-[#c084fc]",
     },
     {
       title: "Online Grocery Retailing System",
@@ -50,7 +50,7 @@ export default function Projects() {
       role: "Lead Architect & Developer",
       technologies: ["Flutter", "ReactJS", "Next.js", "Node.js", "Express", "Firebase", "AWS", "GCP", "MongoDB", "Google Maps Platform"],
       impact: "Complete end-to-end solution serving multiple user types",
-      gradient: "from-blue-500 to-cyan-600",
+      gradient: "from-[#10b981] to-[#34d399]",
     },
     {
       title: "Cost-Effective Monitoring Architecture",
@@ -58,7 +58,7 @@ export default function Projects() {
       role: "Architect",
       technologies: ["Grafana", "Prometheus", "Loki", "Docker", "GCP"],
       impact: "Significant reduction in server costs through optimized monitoring",
-      gradient: "from-pink-500 to-rose-600",
+      gradient: "from-[#00d9ff] to-[#a855f7]",
     },
     {
       title: "Monolithic Project Management with Nx",
@@ -66,7 +66,7 @@ export default function Projects() {
       role: "Technical Lead",
       technologies: ["Nx", "Angular", "Express"],
       impact: "Improved scalability and code reusability across projects",
-      gradient: "from-indigo-500 to-purple-600",
+      gradient: "from-[#a855f7] to-[#10b981]",
     },
     {
       title: "Encrypted HLS Video Streaming Platform",
@@ -74,7 +74,7 @@ export default function Projects() {
       role: "Software Engineer",
       technologies: ["Angular", "Java", "FFmpeg", "Spring Boot", "MySQL", "GCP"],
       impact: "Secure content delivery with comprehensive user analytics",
-      gradient: "from-teal-500 to-cyan-600",
+      gradient: "from-[#10b981] to-[#00d9ff]",
     },
   ];
 
@@ -82,73 +82,93 @@ export default function Projects() {
     <section 
       ref={sectionRef}
       id="projects" 
-      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden"
+      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0f1629] via-[#0a0e27] to-[#050812] overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,217,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(168,85,247,0.05)_1px,transparent_1px)] bg-[size:60px_60px] opacity-50" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#00d9ff]/12 via-[#a855f7]/8 to-transparent rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#10b981]/10 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      </div>
       
       <div className="relative max-w-7xl mx-auto z-10">
+        {/* Header */}
         <div className="text-center mb-20">
-          <span className="inline-block px-4 py-2 glass rounded-full mb-4">
-            <span className="text-sm font-medium text-purple-400">Projects</span>
-          </span>
-          <h2 className="text-5xl sm:text-6xl font-extrabold mb-4">
-            <span className="text-white">Featured </span>
-            <span className="text-gradient">Work</span>
+          <div className="inline-block mb-6">
+            <span className="inline-flex items-center gap-3 px-6 py-3 glass-glow rounded-full border border-[#10b981]/40 bg-gradient-to-r from-[#10b981]/15 via-[#00d9ff]/10 to-transparent">
+              <span className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse-subtle" />
+              <span className="text-sm font-semibold text-[#10b981] tracking-widest uppercase font-heading">Projects</span>
+              <span className="w-2 h-2 bg-[#00d9ff] rounded-full animate-pulse-subtle" style={{ animationDelay: '0.5s' }} />
+            </span>
+          </div>
+          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 tracking-tight font-heading">
+            <span className="block text-white mb-2">Featured</span>
+            <span className="block text-gradient">Work</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-40 h-1 bg-gradient-to-r from-transparent via-[#00d9ff] via-[#a855f7] to-transparent mx-auto animate-gradient rounded-full" />
         </div>
         
+        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
               data-index={index}
-              className={`glass rounded-2xl p-6 hover-lift group overflow-hidden transition-all duration-1000 ${
+              className={`group interactive-card glass-glow rounded-2xl p-8 border-2 border-white/10 bg-[#0f1629]/90 backdrop-blur-xl overflow-hidden relative h-full flex flex-col ${
                 visibleItems.has(index)
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-10'
+                  ? 'opacity-100 translate-y-0 scale-100'
+                  : 'opacity-0 translate-y-10 scale-95'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ 
+                transitionDelay: `${index * 100}ms`,
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
             >
-              {/* Gradient Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+              {/* Gradient Background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
               
-              <div className="relative z-10">
-                <div className="mb-4">
-                  <span className={`inline-block px-3 py-1 bg-gradient-to-r ${project.gradient} text-white rounded-full text-xs font-semibold mb-3`}>
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Role Badge */}
+                <div className="mb-6">
+                  <span className={`inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold bg-gradient-to-r ${project.gradient} text-white shadow-lg border-2 border-white/40 font-heading backdrop-blur-sm`}>
                     {project.role}
                   </span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                {/* Title */}
+                <h3 className={`text-2xl font-bold text-white mb-4 font-heading group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r ${project.gradient} transition-all duration-500`}>
                   {project.title}
                 </h3>
                 
-                <p className="text-slate-400 leading-relaxed mb-4 text-sm">
+                {/* Description */}
+                <p className="text-lg text-[#e2e8f0] leading-relaxed mb-6 font-normal flex-grow group-hover:text-white transition-colors">
                   {project.description}
                 </p>
                 
+                {/* Impact */}
                 {project.impact && (
-                  <div className="mb-4 p-3 glass border-l-4 border-cyan-500 rounded-r-lg">
-                    <p className="text-xs text-slate-300 italic">
-                      {project.impact}
+                  <div className={`mb-6 p-4 glass border-l-4 bg-gradient-to-r ${project.gradient} rounded-xl bg-opacity-10 border-opacity-50`}>
+                    <p className="text-sm text-[#cbd5e1] italic font-semibold">
+                      ✨ {project.impact}
                     </p>
                   </div>
                 )}
                 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 pt-6 border-t border-white/10 mt-auto">
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 glass border border-white/10 text-slate-300 rounded-lg text-xs font-medium hover:border-cyan-500/50 transition-colors duration-200"
+                      className="skill-tag px-3 py-1.5 glass border border-white/20 text-[#e2e8f0] rounded-lg text-xs font-semibold hover:border-[#00d9ff]/50 hover:text-[#00d9ff] hover:bg-[#00d9ff]/10 transition-all duration-300 cursor-default"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
+
+              {/* Decorative Corner */}
+              <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-500`} />
             </div>
           ))}
         </div>

@@ -38,7 +38,7 @@ export default function Experience() {
         "Collaborating closely with sales and product teams to understand customer needs and translate them into visually stunning, technically robust demo solutions.",
       ],
       technologies: ["Sitecore", "Next.js", "React", "TypeScript", ".NET", "C#", "Azure", "Git"],
-      color: "from-emerald-500 to-teal-600",
+      gradient: "from-[#00d9ff] to-[#33e0ff]",
     },
     {
       company: "Surge Global",
@@ -49,7 +49,7 @@ export default function Experience() {
         "Acted as the emotional and technical backbone of the team during challenges, helping deliver a successful product and uphold the company's reputation.",
       ],
       technologies: ["Next.js", "Nest.js", "TypeScript", "Git", "AWS Services", "Terraform"],
-      color: "from-cyan-500 to-blue-600",
+      gradient: "from-[#a855f7] to-[#c084fc]",
     },
     {
       company: "Axinom & Sky Group UK",
@@ -63,7 +63,7 @@ export default function Experience() {
         "Participated in on-call rotations to address production issues promptly and prioritize resolutions based on severity levels.",
       ],
       technologies: ["Node.js", "GraphQL", "TypeScript", "AWS Serverless", "Serverless Framework", "AWS CDK", "Concourse CI", "Jest"],
-      color: "from-purple-500 to-pink-600",
+      gradient: "from-[#10b981] to-[#34d399]",
     },
     {
       company: "CodeGen International Sri Lanka",
@@ -73,7 +73,7 @@ export default function Experience() {
         "Developed encrypted video streaming service utilizing HLS protocol to securely deliver content to a broad audience while tracking individual user engagement metrics.",
       ],
       technologies: ["Angular", "Java", "FFmpeg", "Spring Boot", "MySQL", "GCP"],
-      color: "from-blue-500 to-cyan-600",
+      gradient: "from-[#00d9ff] to-[#a855f7]",
     },
     {
       company: "DirectFN Sri Lanka",
@@ -85,88 +85,108 @@ export default function Experience() {
         "Designed and implemented database management systems from the ground up, incorporating comprehensive testing and support for multiple databases.",
       ],
       technologies: ["Java", "AKKA", "State machines", "Oracle", "MySQL", "H2"],
-      color: "from-pink-500 to-rose-600",
+      gradient: "from-[#a855f7] to-[#10b981]",
     },
   ];
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="experience" 
-      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden"
+      id="experience"
+      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0f1629] via-[#0a0e27] to-[#050812] overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-      
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,217,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(168,85,247,0.05)_1px,transparent_1px)] bg-[size:60px_60px] opacity-50" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#00d9ff]/12 via-[#a855f7]/8 to-transparent rounded-full blur-3xl animate-float" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#10b981]/10 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      </div>
+
       <div className="relative max-w-7xl mx-auto z-10">
+        {/* Header */}
         <div className="text-center mb-20">
-          <span className="inline-block px-4 py-2 glass rounded-full mb-4">
-            <span className="text-sm font-medium text-purple-400">Experience</span>
-          </span>
-          <h2 className="text-5xl sm:text-6xl font-extrabold mb-4">
-            <span className="text-white">Professional </span>
-            <span className="text-gradient">Journey</span>
+          <div className="inline-block mb-6">
+            <span className="inline-flex items-center gap-3 px-6 py-3 glass-glow rounded-full border border-[#00d9ff]/40 bg-gradient-to-r from-[#00d9ff]/15 via-[#a855f7]/10 to-transparent">
+              <span className="w-2 h-2 bg-[#00d9ff] rounded-full animate-pulse-subtle" />
+              <span className="text-sm font-semibold text-[#00d9ff] tracking-widest uppercase font-heading">Experience</span>
+              <span className="w-2 h-2 bg-[#a855f7] rounded-full animate-pulse-subtle" style={{ animationDelay: '0.5s' }} />
+            </span>
+          </div>
+          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 tracking-tight font-heading">
+            <span className="block text-white mb-2">Professional</span>
+            <span className="block text-gradient">Journey</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-40 h-1 bg-gradient-to-r from-transparent via-[#00d9ff] via-[#a855f7] to-transparent mx-auto animate-gradient rounded-full" />
         </div>
-        
+
+        {/* Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-500 via-cyan-500 to-pink-500 hidden lg:block rounded-full" />
-          
+          {/* Animated Timeline Line */}
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00d9ff] via-[#a855f7] to-[#10b981] hidden lg:block opacity-30 animate-gradient" />
+
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div
                 key={index}
                 data-index={index}
-                className={`relative pl-0 lg:pl-24 transition-all duration-1000 ${
-                  visibleItems.has(index)
-                    ? 'opacity-100 translate-x-0'
-                    : 'opacity-0 -translate-x-10'
-                }`}
+                className={`relative pl-0 lg:pl-24 transition-all duration-1000 ${visibleItems.has(index)
+                  ? 'opacity-100 translate-x-0'
+                  : 'opacity-0 -translate-x-10'
+                  }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Timeline Dot */}
-                <div className={`absolute left-6 top-6 w-6 h-6 bg-gradient-to-br ${exp.color} rounded-full border-4 border-slate-950 shadow-lg glow-effect hidden lg:block z-10`} />
-                
-                {/* Card */}
-                <div className="glass rounded-2xl p-8 hover-lift group">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className={`w-3 h-3 bg-gradient-to-br ${exp.color} rounded-full`} />
-                        <h3 className="text-2xl font-bold text-white">
-                          {exp.role}
-                        </h3>
+                <div className={`absolute left-6 top-8 w-5 h-5 bg-gradient-to-br ${exp.gradient} rounded-full border-4 border-[#050812] shadow-xl hidden lg:block z-10 animate-glow-pulse`} />
+
+                {/* Experience Card */}
+                <div className="group interactive-card glass-glow rounded-2xl p-8 border-2 border-white/10 bg-[#0f1629]/90 backdrop-blur-xl overflow-hidden relative">
+                  {/* Gradient Background on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                  <div className="relative z-10">
+                    {/* Header */}
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 pb-6 border-b border-white/10">
+                      <div className="flex-1 mb-4 sm:mb-0">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className={`w-3 h-3 bg-gradient-to-br ${exp.gradient} rounded-full animate-pulse-subtle`} />
+                          <h3 className="text-3xl font-bold text-white font-heading group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#00d9ff] group-hover:to-[#a855f7] transition-all duration-500">
+                            {exp.role}
+                          </h3>
+                        </div>
+                        <p className={`text-2xl font-semibold bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent pl-6 font-heading`}>
+                          {exp.company}
+                        </p>
                       </div>
-                      <p className={`text-xl font-semibold bg-gradient-to-r ${exp.color} bg-clip-text text-transparent mb-2`}>
-                        {exp.company}
-                      </p>
-                    </div>
-                    <span className="text-slate-400 font-medium text-sm sm:text-base whitespace-nowrap sm:ml-4 mt-2 sm:mt-0">
-                      {exp.period}
-                    </span>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-6">
-                    {exp.achievements.map((achievement, idx) => (
-                      <li key={idx} className="text-slate-300 leading-relaxed flex items-start group/item">
-                        <span className={`text-transparent bg-gradient-to-br ${exp.color} bg-clip-text mr-3 mt-1.5 font-bold`}>▸</span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="flex flex-wrap gap-2 pt-6 border-t border-white/10">
-                    {exp.technologies.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className={`px-4 py-2 glass border border-white/10 text-slate-300 rounded-lg text-sm font-medium hover:bg-gradient-to-r ${exp.color} hover:text-white transition-all duration-300 cursor-default`}
-                      >
-                        {tech}
+                      <span className="text-lg text-[#cbd5e1] font-semibold whitespace-nowrap sm:ml-4 px-4 py-2 glass rounded-lg border border-white/10">
+                        {exp.period}
                       </span>
-                    ))}
+                    </div>
+
+                    {/* Achievements */}
+                    <ul className="space-y-4 mb-8 pl-6">
+                      {exp.achievements.map((achievement, idx) => (
+                        <li key={idx} className="text-lg text-[#e2e8f0] leading-relaxed flex items-start group/item font-normal">
+                          <span className={`text-2xl mr-4 mt-1 bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent font-bold`}>▸</span>
+                          <span className="group-hover/item:text-white transition-colors">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-3 pt-6 border-t border-white/10 pl-6">
+                      {exp.technologies.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="skill-tag px-5 py-2 glass border border-white/20 text-[#e2e8f0] rounded-xl text-sm font-semibold hover:border-[#00d9ff]/50 hover:text-[#00d9ff] hover:bg-[#00d9ff]/10 transition-all duration-300 cursor-default"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
+
+                  {/* Decorative Corner */}
+                  <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${exp.gradient} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-500`} />
                 </div>
               </div>
             ))}

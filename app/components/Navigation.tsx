@@ -27,9 +27,9 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "glass border-b border-white/10 backdrop-blur-xl"
+          ? "glass-glow border-b border-[#00d9ff]/30 backdrop-blur-xl shadow-lg shadow-[#00d9ff]/10"
           : "bg-transparent"
       }`}
     >
@@ -37,7 +37,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <Link
             href="/"
-            className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300"
+            className="text-2xl font-light text-gradient-primary hover:text-gradient-secondary transition-all duration-300 tracking-wider font-heading hover:scale-110 inline-block"
           >
             TB
           </Link>
@@ -48,10 +48,10 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-slate-300 hover:text-cyan-400 font-medium transition-colors duration-200 text-sm relative group"
+                className="text-[#94a3b8] hover:text-[#00d9ff] font-light transition-all duration-300 text-sm relative group tracking-wide font-heading"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-[#00d9ff] to-[#a855f7] group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </div>
@@ -59,7 +59,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 glass rounded-lg text-white hover:bg-white/10 transition-colors"
+            className="md:hidden p-2 glass-glow rounded-xl text-[#00d9ff] hover:bg-[#00d9ff]/10 transition-all border border-[#00d9ff]/20 hover:border-[#a855f7]/30"
             aria-label="Toggle menu"
           >
             <svg
@@ -72,14 +72,14 @@ export default function Navigation() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
+                  strokeWidth={1.5}
                   d="M6 18L18 6M6 6l12 12"
                 />
               ) : (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
+                  strokeWidth={1.5}
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               )}
@@ -89,14 +89,14 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-6 glass border-t border-white/10 mt-4">
+          <div className="md:hidden pb-6 glass-glow border-t border-[#00d9ff]/20 mt-4 animate-scale-in">
             <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-all duration-200 font-medium"
+                  className="px-4 py-3 text-[#94a3b8] hover:text-[#00d9ff] hover:bg-[#00d9ff]/5 rounded-xl transition-all duration-200 font-light tracking-wide font-heading"
                 >
                   {link.label}
                 </Link>
